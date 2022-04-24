@@ -1,0 +1,241 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(images/childhood.jpg);
+    color: #f5f6f7 !important;
+    border-left: 5px outset #fae8b281;
+    font-family:Arial, Helvetica, sans-serif;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+}
+
+h1, h2, .modal-title {
+    padding: 22px;
+    text-align: center;
+}
+
+.description {
+    font-size: 1.5rem;
+    font-style: oblique;
+    padding: 0 15% 0 15%;
+}
+
+#info {
+    position: relative;
+}
+#tip{
+    display: none;
+}
+    #info:hover + #tip {
+        display: inline-block;
+        background-color: #fae8b281;
+        border: 0.5px solid #333;
+        font-weight:normal;
+        margin-left: 1%;
+        text-align: center;
+        position: absolute;
+        z-index: 2;
+    }
+    #tip-text {
+        color: #333;
+        font-size: 1rem;
+        padding: 1%;
+    }
+
+hr {
+    border: 5px outset #fae8b281;
+    margin-top: 2%;
+}
+
+/*** Poem***/
+#poem {
+    display: block;
+    border-right: 5px outset #fae8b281;
+    margin-left: 75%;
+    position: absolute;
+    text-align: center;
+    width: 20%;
+    z-index: 1;
+}
+    #author {
+        padding-left: 50%;
+    }
+
+/*** Photo Gallery ***/
+#gallery {
+    display: flex;
+    align-items:center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0 4px;
+}
+    #gallery figure {
+        margin: 10px;
+    }
+    #gallery img {
+        background-color: #fae8b281;
+        border-radius: 10px;
+        height: 500px;
+        margin-top: 8px;
+        padding: 0 4px;
+    }
+    .nga {
+        font-size: 1.7rem;
+        font-style: oblique;
+    }
+
+    .details {
+        display: none;
+        background-color: #fae8b281;
+        height: auto;
+        width: 90%;
+        z-index: 2;
+    }
+
+.modal-content, .modal-dialog, .modal-footer {
+    background-color: #fae8b281!important;
+}
+.modal-dialog {
+    height: 90%!important;
+    width: 90%!important;
+}
+    .modal-header {
+        padding: 0!important;
+        position: absolute;
+        z-index: 3;
+    }
+
+    .modal-title {
+        color: #f5f6f7 !important;
+    }
+    .modal-image {
+        height: 90%!important;
+        margin-left: 5%;
+        width: 90%!important;
+    }
+    .modal-body {
+        background-color: #333!important;
+    }
+    .modal-body p {
+        display: inline-block;
+        font-size: 2rem;
+        margin: 2% 10px 10px 60%;
+        position: absolute;
+        text-align: center;
+        width: 30%;
+        z-index: 2;
+    }
+    .btn {
+        color: #231c12;
+    }
+
+/*** Rothko Painting ***/
+#abstract {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content: center;
+}
+    #mark-rothko, frame {
+        display: flex;
+        flex-direction: column;
+    }
+    #mark-rothko {
+        width: 40%;
+    }
+        .rothko {
+            display: flex;
+            align-self: center;
+            height: 600px;
+            width: 500px;
+        }
+        figcaption, #abstract p {
+            font-style: italic;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+    .frame {
+        border: 20px solid black;
+        height: 598px;
+        width: 500px;
+    }
+        .canvas {
+            background-color: #431F16;
+            filter: blur(2px);
+            height: 558px;
+            overflow:hidden;
+            width: 460px;
+        }
+            .one {
+                background-color: #E28F15;
+                border-radius: 9px;
+                box-shadow: 0 0 3px 3px #efb762;
+                height: 150px;
+                margin: 20px auto;
+                transform: rotate(-0.6deg);
+                width: 425px;
+            }
+            .two {
+                background-color: #8C1C17;
+                border-radius: 8px 10px;
+                box-shadow: 0 0 3px 3px #8f0401;
+                height: 200px;
+                margin: 0 auto 20px;
+                transform: rotate(0.4deg);
+                width: 475px;
+            }
+            .one, .two {
+                filter: blur(1px);
+            }
+            .three {
+                background-color: #B3423B;
+                border-radius: 30px 25px 60px 12px;
+                box-shadow: 0 0 5px 5px #b20403;
+                filter: blur(2px);
+                height: 28%;
+                margin: auto;
+                transform: rotate(-0.2deg);
+                width: 91%;
+            }
+    #MCI, .creators {
+        color: #E28F15!important;
+        font-weight: bold;
+        text-decoration: none!important;
+    }
+
+@media (max-width: 1150px) {
+    #poem {
+        display: none;
+    }
+    #gallery img {
+        object-fit: cover; /* Tells the image to fill the img container while maintaining aspect ratio, resulting in cropping to fit.*/
+    }
+    #gallery img,  .modal-body p, .frame, .canvas, #mark-rothko, figcaption, .rothko {
+        width: 100%;
+    }
+    .modal-body p, .modal-header {
+        position: relative;
+        z-index: 0;
+    }
+    .modal-body p {
+        margin: auto;
+    }
+    .frame {
+        border: 10px solid black;
+        height: 580px;
+    }
+    #mark-rothko {
+        margin: 80px 0 0 0;
+        height: 500px;
+    }
+        figcaption {
+            text-align: center;
+        }
+}
