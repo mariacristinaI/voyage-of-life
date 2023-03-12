@@ -1,5 +1,13 @@
+@import "bulma/sass/utilities/_all.sass";
+@import "bulma/sass/elements/button.sass";
+@import "bulma/sass/elements/modal.sass";
+
 * {
     box-sizing: border-box;
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -9,6 +17,9 @@ body {
     font-family:Arial, Helvetica, sans-serif;
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
 }
 
 h1, h2, .modal-title {
@@ -73,9 +84,6 @@ hr {
     margin: 0;
     padding: 0 4px;
 }
-    #gallery figure {
-        margin: 10px;
-    }
     #gallery img {
         background-color: #fae8b281;
         border-radius: 10px;
@@ -94,13 +102,19 @@ hr {
         height: auto;
         width: 90%;
         z-index: 2;
-    }
+    }  
 
+
+.modal {
+    min-height: 100%;
+}
+.modal-open {
+    overflow: scroll !important;
+}
 .modal-content, .modal-dialog, .modal-footer {
     background-color: #fae8b281!important;
 }
 .modal-dialog {
-    height: 90%!important;
     width: 90%!important;
 }
     .modal-header {
@@ -220,6 +234,9 @@ hr {
     #gallery img,  .modal-body p, .frame, .canvas, #mark-rothko, figcaption, .rothko {
         width: 100%;
     }
+    .modal {
+        position: sticky !important;
+    }
     .modal-body p, .modal-header {
         position: relative;
         z-index: 0;
@@ -238,4 +255,29 @@ hr {
         figcaption {
             text-align: center;
         }
+}
+@media (max-width: 768px) {
+    h1 {
+        font-size: 32px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    #poem {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    #gallery {
+        flex-wrap: wrap;
+    }
+    #gallery figure {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .modal-dialog {
+        width: 100%!important;
+    }
+    .modal-body .modal-image {
+        max-width: 100%;
+    }
 }
